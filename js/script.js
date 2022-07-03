@@ -101,16 +101,16 @@ function scrollToTop(){
 
 let container = document.getElementById('entree');
 let spans = document.querySelectorAll('span');
-container.onmousemove = function(e) {
+container.addEventListener('mousemove', function(e) {
     let X = e.pageX;
     let Y = e.pageY;   
     document.getElementById('webdev').style.transform = 'translate(' + X / 100 * 4 + 'px,' + Y / 100 * 4 + 'px)';
     document.getElementById('lienBienvenu').style.transform = 'translate(' + X / 100 * 7 + 'px,' + Y / 100 * 7 + 'px)';
-}
+});
 /*-------------------------------------------------------------------sortie-----------------------------------------------------------------------------*/
 
 let contact = document.getElementById('contact');
-contact.onmousemove = function(e){
+contact.addEventListener('mousemove', function(e){
     let X = e.pageX;
     let Y = e.pageY;
     document.getElementById('nuageNom').style.transform = 'translate(' + X / 100 * -4 + 'px,' + Y / 100 * 2 + 'px)';    
@@ -119,7 +119,7 @@ contact.onmousemove = function(e){
     document.getElementById('nuageMessage').style.transform = 'translate(' + X / 100 * 4 + 'px,' + Y / 100 * 2 + 'px)';
     document.getElementById('nuageConditions').style.transform = 'translate(' + X / 100 * 2 + 'px,' + Y / 100 * 2 + 'px)';
     document.getElementById('nuageBouton').style.transform = 'translate(' + X / 100 * -2 + 'px,' + Y / 100 * 2 + 'px)';
-}
+});
 /*-------------------------------------------------------------------canvas-----------------------------------------------------------------------------*/
 
 const canvas2 = document.getElementById('canvas2');
@@ -218,66 +218,54 @@ window.addEventListener('scroll', function(){
 
 /*----------------------------------------------------------------- Contact Form--------------------------------------------------------------*/
 
-function submitContactForm(){
-    if(validateForm()){
-        document.getElementById('formContact').submit();
-    }
-};
-
-function validateForm() {
+function contactSubmit(){
     
-    //const name = document.getElementById("nameContact").value;;
-    //const object = document.getElementById("objectContact").value;; 
-    const ec = document.getElementById("emailContact").value;
-    const message = document.getElementById("message").value;
-    const cond = document.getElementById("check1").checked;
-    if(ec.trim() === '') {
-        alert("Veuillez saisir votre e-mail");
+    const ec = document.getElementById("emailContact");
+    const message = document.getElementById("message");
+    const cond = document.getElementById("checkCond");
+    if(ec.value.trim() === '') {
+        alert("Veuillez saisir votre e-mail.");
+        ec.focus();
         return false;
     }
-    if(message.trim() === '') {
-        alert("Veuillez laisser un message");
+    if(message.value.trim() === '') {
+        alert("Veuillez laisser un message.");
+        message.focus();
         return false;
     }
-    if(!cond) {
-        alert("Veuillez accepter les conditions");
+    if(!cond.checked) {
+        alert("Veuillez accepter les conditions.");
+        cond.focus();
         return false;
     }
     if(!checkEmail() || !checkName()){
         return false;
     };
-/*
+
+    var data = new FormData(document.getElementById('formContact'));
+
     var xhr = new XMLHttpRequest();
 
-    const data = {
-        'nameContact' : name,
-        'objectContact' : object,
-        'emailContact' : ec,
-        'message' : message
-    };
-
-
     xhr.open("POST", 'sendEmail.php', true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     xhr.onreadystatechange = function() { // Call a function when the state changes.
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-            
-            alert("Message envoyé !");
+            document.getElementById('formContact').innerHTML = this.response;
         }
     }
     xhr.send(data);    
-*/
+
     return true;  
 };
+
 function checkEmail() {
 
     const email = document.getElementById('emailContact');
-    const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    const filter = /^[a-z0-9]{1,}[\-\_\.a-z0-9]{0,}@[a-z]{2,}[\-\_\.a-z0-9]{0,}\.[a-z]{2,6}$/;
 
     if (!filter.test(email.value)) {
         alert("Le format d'adresse e-mail saisie n'est pas valide.");
-        email.focus;
+        email.focus();
         return false;
     }
     return true;
@@ -285,15 +273,16 @@ function checkEmail() {
 function checkName() {
 
     const name = document.getElementById('nameContact');
-    const filter = /^[A-Za-z '-]+$/;
+    const filter = /^[A-Za-z '-]*$/;
 
     if (!filter.test(name.value)) {
         alert("Le format du nom saisi n'est pas valide. Veuillez écrire sans accents ni caractères spéciaux.");
-        name.focus;
+        name.focus();
         return false;
     }
     return true;
 }
+
 /*-----------------------------------------------------------------navbar --------------------------------------------------------------------*/
 
 document.getElementById('nav').addEventListener('mouseenter', function(){
@@ -362,7 +351,6 @@ window.addEventListener('scroll', function(){
     }
     else if( window.scrollY > 3*window.innerHeight-200 && window.scrollY < 4*window.innerHeight)
     {
-        console.log(window.scrollY);
         anime.timeline()
         .add({
             targets: '.contourLogo',
@@ -374,6 +362,10 @@ window.addEventListener('scroll', function(){
             delay: (el, i) => 300 + 180 * i
         });
         logosRemontes = true;
+    }
+    const success = document.getElementsByClassName('alert-success')[0];
+    if(success != undefined){
+        success.parentElement.removeChild(success);
     }
 });
 
