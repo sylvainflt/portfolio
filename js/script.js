@@ -122,30 +122,30 @@ contact.addEventListener('mousemove', function(e){
 });
 /*-------------------------------------------------------------------canvas-----------------------------------------------------------------------------*/
 
-const canvas2 = document.getElementById('canvas2');
-const ctx2 = canvas2.getContext('2d');
-canvas2.width = window.innerWidth;
-canvas2.height= window.innerHeight;
+const canvas = document.getElementById('canvas');
+const ctx2 = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height= window.innerHeight;
 const particlesArray = [];
 //let hue = 0;
 
 window.addEventListener('resize', function(){
-    canvas2.width = window.innerWidth;
-    canvas2.height= window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height= window.innerHeight;
 })
 
 const mouse2 = {
     x: undefined,
     y: undefined,
 }
-canvas2.addEventListener('click', function(event){
+canvas.addEventListener('click', function(event){
     mouse2.x = event.offsetX;
     mouse2.y = event.offsetY;
     for(let i = 0; i< 10; i++){
         particlesArray.push(new Particle());
     }
 });
-canvas2.addEventListener('mousemove', function(event){
+canvas.addEventListener('mousemove', function(event){
     mouse2.x = event.offsetX;
     mouse2.y = event.offsetY;
     for(let i = 0; i< 5; i++){
@@ -201,9 +201,9 @@ function handleParticles(){
     }
 }
 function animate2(){
-    ctx2.clearRect(0,0, canvas2.width, canvas2.height);
+    ctx2.clearRect(0,0, canvas.width, canvas.height);
     //ctx2.fillStyle = 'rgba(0,0,0,0.02)';
-    //ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
+    //ctx2.fillRect(0, 0, canvas.width, canvas.height);
     handleParticles();
     //hue+=2;
 
@@ -212,8 +212,8 @@ function animate2(){
 animate2();
 
 window.addEventListener('scroll', function(){
-    canvas2.width = window.innerWidth;
-    canvas2.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 });
 
 /*----------------------------------------------------------------- Contact Form--------------------------------------------------------------*/
@@ -369,3 +369,9 @@ window.addEventListener('scroll', function(){
     }
 });
 
+function checkMessage(){
+    const success = document.getElementsByClassName('alert-success')[0];
+    if(success != undefined){
+        success.parentElement.removeChild(success);
+    }
+};

@@ -7,7 +7,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-#canvas2{
+#canvas{
     position: absolute;
     left: 0;
     top: 0;
@@ -455,7 +455,25 @@ main {
 #nuageBouton{
     position: absolute;
     top: 70vh;
-    left: 60vw;    
+    left: 60vw;  
+    animation: move 5s linear infinite forwards;  
+}
+@keyframes move {
+    0%{
+        top: 70vh;
+    }
+    5%{
+        top: 69vh;
+    }
+    10%{
+        top: 70vh;
+    }
+    15%{
+        top: 69vh;
+    }
+    20%{
+        top: 70vh;
+    }
 }
 #nuageBouton a{
     padding: 10px 20px;
