@@ -113,12 +113,38 @@ let contact = document.getElementById('contact');
 contact.addEventListener('mousemove', function(e){
     let X = e.pageX;
     let Y = e.pageY;
-    document.getElementById('nuageNom').style.transform = 'translate(' + X / 100 * -4 + 'px,' + Y / 100 * 2 + 'px)';    
-    document.getElementById('nuageObjet').style.transform = 'translate(' + X / 100 * 3 + 'px,' + Y / 100 * 2 + 'px)';
-    document.getElementById('nuageEmail').style.transform = 'translate(' + X / 100 * -3 + 'px,' + Y / 100 * 2 + 'px)';
-    document.getElementById('nuageMessage').style.transform = 'translate(' + X / 100 * 4 + 'px,' + Y / 100 * 2 + 'px)';
-    document.getElementById('nuageConditions').style.transform = 'translate(' + X / 100 * 2 + 'px,' + Y / 100 * 2 + 'px)';
-    document.getElementById('nuageBouton').style.transform = 'translate(' + X / 100 * -2 + 'px,' + Y / 100 * 2 + 'px)';
+    document.getElementById('nuageNom').style.transform = 'translate(' + X / 100 * -4 + 'px,' + Y / 200 * 2 + 'px)';    
+    document.getElementById('nuageObjet').style.transform = 'translate(' + X / 100 * 3 + 'px,' + Y / 200 * 2 + 'px)';
+    document.getElementById('nuageEmail').style.transform = 'translate(' + X / 100 * -3 + 'px,' + Y / 200 * 2 + 'px)';
+    document.getElementById('nuageMessage').style.transform = 'translate(' + X / 100 * 4 + 'px,' + Y / 200 * 2 + 'px)';
+    document.getElementById('nuageBouton').style.transform = 'translate(' + X / 100 * -2 + 'px,' + Y / 200 * 2 + 'px)';
+});
+/* ---------------------- en cas de superposition des champs ----------------*/
+document.getElementById('nameContact').addEventListener('focus', function(){
+    document.getElementById('nuageNom').style.zIndex = "1";
+    document.getElementById('nuageObjet').style.zIndex = "0";
+    document.getElementById('nuageEmail').style.zIndex = "0";
+    document.getElementById('nuageMessage').style.zIndex = "0";
+});
+document.getElementById('objectContact').addEventListener('focus', function(){
+    document.getElementById('nuageNom').style.zIndex = "0";
+    document.getElementById('nuageObjet').style.zIndex = "1";
+    document.getElementById('nuageEmail').style.zIndex = "0";
+    document.getElementById('nuageMessage').style.zIndex = "0";
+
+});
+document.getElementById('emailContact').addEventListener('focus', function(){
+    document.getElementById('nuageNom').style.zIndex = "0";
+    document.getElementById('nuageObjet').style.zIndex = "0";
+    document.getElementById('nuageEmail').style.zIndex = "1";
+    document.getElementById('nuageMessage').style.zIndex = "0";
+
+});
+document.getElementById('message').addEventListener('focus', function(){
+    document.getElementById('nuageNom').style.zIndex = "0";
+    document.getElementById('nuageObjet').style.zIndex = "0";
+    document.getElementById('nuageEmail').style.zIndex = "0";
+    document.getElementById('nuageMessage').style.zIndex = "1";
 });
 /*-------------------------------------------------------------------canvas-----------------------------------------------------------------------------*/
 
@@ -132,6 +158,7 @@ const particlesArray = [];
 window.addEventListener('resize', function(){
     canvas.width = window.innerWidth;
     canvas.height= window.innerHeight;
+    //this.location.reload();
 })
 
 const mouse2 = {
@@ -222,7 +249,7 @@ function contactSubmit(){
     
     const ec = document.getElementById("emailContact");
     const message = document.getElementById("message");
-    const cond = document.getElementById("checkCond");
+    //const cond = document.getElementById("checkCond");
     if(ec.value.trim() === '') {
         alert("Veuillez saisir votre e-mail.");
         ec.focus();
@@ -233,11 +260,11 @@ function contactSubmit(){
         message.focus();
         return false;
     }
-    if(!cond.checked) {
+    /*if(!cond.checked) {
         alert("Veuillez accepter les conditions.");
         cond.focus();
         return false;
-    }
+    }*/
     if(!checkEmail() || !checkName()){
         return false;
     };
@@ -287,6 +314,7 @@ function checkName() {
 
 document.getElementById('nav').addEventListener('mouseenter', function(){
     this.style.opacity = "1";
+    
     if(window.pageYOffset >= 3*window.innerHeight){
         this.style.background = "#1020dd80";
     }else{
@@ -295,6 +323,7 @@ document.getElementById('nav').addEventListener('mouseenter', function(){
 });
 document.getElementById('nav').addEventListener('mouseleave', function(){
     this.style.opacity = "0";
+    this.style.animation = "none";
 });
 
 /*--------------------------------------------------------------anims textes-------------------------------------------------------------*/
@@ -349,7 +378,7 @@ window.addEventListener('scroll', function(){
         });
         motEcrit = true;
     }
-    else if( window.scrollY > 3*window.innerHeight-200 && window.scrollY < 4*window.innerHeight)
+    else if(!logosRemontes && window.scrollY > 3*window.innerHeight-200 && window.scrollY < 4*window.innerHeight)
     {
         anime.timeline()
         .add({
@@ -366,7 +395,7 @@ window.addEventListener('scroll', function(){
     const success = document.getElementsByClassName('alert-success')[0];
     if(success != undefined){
         success.parentElement.removeChild(success);
-    }
+    }    
 });
 
 function checkMessage(){
@@ -375,3 +404,23 @@ function checkMessage(){
         success.parentElement.removeChild(success);
     }
 };
+
+/* ------------------------------- raffraichissement aprés un rotate du telephone -----------------------------*/
+let mobileOrientation = "portrait";
+let backFromLandscape = false;
+
+window.addEventListener('resize', function(){
+
+    if (window.matchMedia("(orientation: landscape)").matches) {
+        mobileOrientation = "landscape";
+        backFromLandscape = true;
+    }
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        mobileOrientation = "portrait";        
+    }
+    if (window.matchMedia("(orientation: portrait)").matches && backFromLandscape) {
+        location.reload();
+        mobileOrientation = "portrait";
+        backFromLandscape = false;
+    }
+});

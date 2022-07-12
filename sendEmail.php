@@ -12,9 +12,7 @@ if(!isset($_POST['emailContact']) || empty($_POST['emailContact'])){
 if(!isset($_POST['message']) || empty($_POST['message'])){
     $errors['message'] = "Le champ message n'est pas renseigné.";
 }
-if(!isset($_POST['checkCond']) || empty($_POST['checkCond']) || !$_POST['checkCond']){
-    $errors['conditions'] = "Veuillez accépter les conditions.";
-}
+
 $name = valid_donnees($_POST['nameContact']);
 $objet = valid_donnees($_POST['objectContact']);
 $email = valid_donnees($_POST['emailContact']);
@@ -55,7 +53,7 @@ if (!empty($email) && !empty($message)){
     if(empty($errors)){
         try{
             $headers = 'From: '.$name.' <'.$email.'>' . "\r\n";
-            $retour = mail("test1@myselfteam209626.testinator.com", $objet, $message, $headers);
+            $retour = mail("contact@sylvainfoucault.com", $objet, $message, $headers);
         }
         catch(Exception $e) {
             $errors['envoiEmail'] = $e->getMessage();

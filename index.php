@@ -30,8 +30,9 @@
 
         <section>
             <div id="entree">
+                <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
                 <canvas id="canvas"></canvas>
-
+                <p>
                 <span style="--i:1;">S</span>
                 <span style="--i:2;">Y</span>
                 <span style="--i:3;">L</span>
@@ -39,7 +40,8 @@
                 <span style="--i:5;">A</span>
                 <span style="--i:6;">I</span>
                 <span style="--i:7;">N</span>
-                <span style="--i:8;">&nbsp;</span>
+                <span style="--i:8;">&nbsp;</span></p>
+                <p>
                 <span style="--i:9;">F</span>
                 <span style="--i:10;">O</span>
                 <span style="--i:11;">U</span>
@@ -47,7 +49,7 @@
                 <span style="--i:13;">A</span>
                 <span style="--i:14;">U</span>
                 <span style="--i:15;">L</span>
-                <span style="--i:16;">T</span>
+                <span style="--i:16;">T</span></p>
 
                 <h1 id="webdev">DEVELOPPEUR WEB</h1>
 
@@ -67,6 +69,8 @@
 
 
         <section id="mot" onshow="afficherElements()">            
+
+            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
 
             <a id="lienTop" onclick="scrollToTop()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -108,6 +112,8 @@
 
 
         <section class="titleScreens" id="realisations">            
+
+            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
 
             <a id="lienBackBienvenu" onclick="scrollBackToBienvenu()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -193,6 +199,8 @@
 
         <section class="skills" id="competences">
 
+            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
+
             <a id="lienBackToRealisations" onclick="scrollBackToRealisations()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g id="Iconly/Two-tone/Arrow---Up-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -253,6 +261,8 @@
 
         <section class="contact" id="contact">
 
+            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
+
             <a id="lienBackToSkills" onclick="scrollBackToSkills()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g id="Iconly/Two-tone/Arrow---Up-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -273,7 +283,7 @@
 
 
     </main>
-    <footer class="bleuColor">Sylvain Foucault - Tous droits réservés 2022</footer>
+    <footer class="bleuColor">Sylvain Foucault - <a class="bleuColor" href="mentionsLegales.php" target="_blank">Mentions Légales</a></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

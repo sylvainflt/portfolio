@@ -13,10 +13,10 @@
         <?php endif; ?>
 
         <div class="form-floating" id="nuageNom">
-        <input type="text" class="form-control" id="nameContact" name="nameContact" placeholder="Nom" 
-                pattern="^[A-Za-z '-]+$" maxlength="20"
-                value="<?= isset($_SESSION['inputs']['nameContact']) ? $_SESSION['inputs']['nameContact'] : '';?>">
-            <label for="nameContact">Nom :</label>
+            <input type="text" class="form-control" id="nameContact" name="nameContact" placeholder="Nom" 
+                    pattern="^[A-Za-z '-]+$" maxlength="20"
+                    value="<?= isset($_SESSION['inputs']['nameContact']) ? $_SESSION['inputs']['nameContact'] : '';?>">
+                <label for="nameContact">Nom :</label>
         </div>								                                                            
         <div class="form-floating" id="nuageObjet">
             <input type="text" class="form-control" id="objectContact" name="objectContact" placeholder="Objet"
@@ -35,15 +35,7 @@
             <textarea class="form-control" id="message" name="message" placeholder="Ecrivez votre message" onfocus="checkMessage()" style="height: 200px" required><?= isset($_SESSION['inputs']['message']) ? $_SESSION['inputs']['message'] : '';?></textarea>									
             <label for="message">Message : </label>
         </div>
-                                                
-        <div class="form-check" id="nuageConditions">
-            <!-- utilisation d'une case à cocher -->
-            <input class="form-check-input" type="checkbox" id="checkCond" name="checkCond" required
-                    value=<?= isset($_SESSION['inputs']['checkCond']) ? $_SESSION['inputs']['checkCond'] : 'off';?>>
-            <label class="form-check-label" for="checkCond">
-                Accepter les conditions
-            </label>
-        </div>
+        
         <input type="hidden" id="postId" name="postId" value="">
         <div id="nuageBouton" onclick="contactSubmit()">                                            
             <a>Envoyer</a>               
