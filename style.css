@@ -1017,6 +1017,3 @@ input[value="8"]:checked ~ .container .carousel img:nth-child(8) { transform: ro
         }
     }    
 }
-@media (orientation:portrait) {
-    body {width:100vw;}
-}

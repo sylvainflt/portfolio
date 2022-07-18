@@ -83,7 +83,7 @@
                 </svg>
             </a>    
             <div class="title">
-                <h2 class="bvp">Bienvenu sur mon portfolio</h2>                
+                <h2 class="bvp">Bienvenue sur mon portfolio</h2>                
             </div>            
 
             <div class="presentation">
@@ -236,6 +236,10 @@
             
                 <a href="https://www.prisma.io/" target="_blank"><div class="contourLogo"><img src="./images/logos/prisma-2.svg"></div></a>                
             
+                <a href="https://fr.wikipedia.org/wiki/Bootstrap_(framework)" target="_blank"><div class="contourLogo"><img src="./images/logos/Bootstrap_logo.png"></div></a>
+
+                <a href="https://fr.wikipedia.org/wiki/Wordpress" target="_blank"><div class="contourLogo"><img src="./images/logos/wordpressLogo.png"></div></a>
+
                 <a href="https://fr.wikipedia.org/wiki/Figma" target="_blank"><div class="contourLogo"><img src="./images/logos/figma-logo-carre_500x.webp"></div></a>                
             
                 <a href="https://fr.wikipedia.org/wiki/Canva" target="_blank"><div class="contourLogo"><img src="./images/logos/Canva-Logo.png"></div></a>                
@@ -244,8 +248,8 @@
             
                 <a href="https://fr.wikipedia.org/wiki/Git" target="_blank"><div class="contourLogo"><img src="./images/logos/git.png"></div></a>                
             
-                <a href="https://fr.wikipedia.org/wiki/GitHub" target="_blank"><div class="contourLogo"><img src="./images/logos/GitHub-Logo.png"></div></a>
-                
+                <a href="https://fr.wikipedia.org/wiki/GitHub" target="_blank"><div class="contourLogo"><img src="./images/logos/GitHub-Logo.png"></div></a>                                
+
             </div>
             <a id="lienContact" onclick="scrollToContact()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
