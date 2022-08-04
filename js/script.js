@@ -108,9 +108,7 @@ container.addEventListener('mousemove', function(e) {
     document.getElementById('lienBienvenu').style.transform = 'translate(' + X / 100 * 7 + 'px,' + Y / 100 * 7 + 'px)';
 });
 /*-------------------------------------------------------------------sortie-----------------------------------------------------------------------------*/
-
-let contact = document.getElementById('contact');
-contact.addEventListener('mousemove', function(e){
+function souffleNuages(e){
     let X = e.pageX;
     let Y = e.pageY;
     document.getElementById('nuageNom').style.transform = 'translate(' + X / 100 * -4 + 'px,' + Y / 200 * 2 + 'px)';    
@@ -118,6 +116,21 @@ contact.addEventListener('mousemove', function(e){
     document.getElementById('nuageEmail').style.transform = 'translate(' + X / 100 * -3 + 'px,' + Y / 200 * 2 + 'px)';
     document.getElementById('nuageMessage').style.transform = 'translate(' + X / 100 * 4 + 'px,' + Y / 200 * 2 + 'px)';
     document.getElementById('nuageBouton').style.transform = 'translate(' + X / 100 * -2 + 'px,' + Y / 200 * 2 + 'px)';
+}
+const largeurLimite = 780;
+window.addEventListener('load', function(){
+    let contact = document.getElementById('contact');
+    if(window.innerWidth > largeurLimite){        
+        contact.addEventListener('mousemove', souffleNuages);
+    }
+});
+window.addEventListener('resize', function(){
+    let contact = document.getElementById('contact');
+    if(window.innerWidth > largeurLimite){        
+        contact.addEventListener('mousemove', souffleNuages);
+    }else{
+        contact.removeEventListener('mousemove', souffleNuages);
+    }
 });
 /* ---------------------- en cas de superposition des champs ----------------*/
 document.getElementById('nameContact').addEventListener('focus', function(){
@@ -329,19 +342,16 @@ document.getElementById('nav').addEventListener('mouseleave', function(){
 /*--------------------------------------------------------------anims textes-------------------------------------------------------------*/
 var motEcrit = false;
 var logosRemontes = false;
-document.getElementsByClassName('bvp')[0].style.display = "none";
-document.getElementsByClassName('rvt')[0].style.display = "none";
-document.getElementsByClassName('rvt2')[0].style.display = "none";
-document.getElementsByClassName('rvt3')[0].style.display = "none";
+document.getElementsByClassName('bvp')[0].style.opacity = 0;
+document.getElementsByClassName('rvt')[0].style.opacity = 0;
+document.getElementsByClassName('rvt2')[0].style.opacity = 0;
+document.getElementsByClassName('rvt3')[0].style.opacity = 0;
 
 window.addEventListener('scroll', function(){
     
     if(!motEcrit && window.scrollY > window.innerHeight-200 && window.scrollY < 2*window.innerHeight){
 
-        document.getElementsByClassName('bvp')[0].style.display = "block";
-        document.getElementsByClassName('rvt')[0].style.display = "block";
-        document.getElementsByClassName('rvt2')[0].style.display = "block";
-        document.getElementsByClassName('rvt3')[0].style.display = "block";
+        document.getElementsByClassName('bvp')[0].style.opacity = 1;        
 
         // Wrap every letter in a span
         var textWrapper = document.querySelector('.bvp');
@@ -349,8 +359,7 @@ window.addEventListener('scroll', function(){
 
         anime.timeline()
         .add({
-            targets: '.bvp .letter',
-            scale: [4,1],
+            targets: '.bvp .letter',            
             opacity: [0,1],
             easing: "easeOutExpo",
             duration: 700,
@@ -367,11 +376,6 @@ window.addEventListener('scroll', function(){
             duration: 700
         }).add({
             targets: '.rvt3',
-            opacity: [0,1],
-            easing: "linear",
-            duration: 700
-        }).add({
-            targets: '.desktop',
             opacity: [0,1],
             easing: "linear",
             duration: 700
@@ -424,3 +428,88 @@ window.addEventListener('resize', function(){
         backFromLandscape = false;
     }
 });
+
+/*-------------------------------Mise En Rond----------------------------------------------------------------------*/
+
+function positionCercle(element, theta){
+    element.style.left = 50 + (50 * Math.cos(theta)) + '%';
+    element.style.top = 50 + (50 * Math.sin(theta)) + '%';
+}
+
+const skillTab = document.querySelectorAll('.skill');
+let angle = (Math.PI * 2) / skillTab.length;
+let r = 1;
+let anim = null;
+let enPosition = false;
+let derniereIconeP = null;
+let iconeCentre = false;
+const pointBleu = document.querySelector('.centreSkills');
+
+function tourner(){
+    
+    if(derniereIconeP != null){
+        derniereIconeP.style.display = 'none';
+    }
+
+    for (let i = 0; i < skillTab.length; i++ ){
+        let skill = skillTab[i];
+        positionCercle(skill, angle*i + r);
+    }
+    r += 0.01;
+    anim = requestAnimationFrame(tourner);
+}
+
+function miseEnRond(){
+
+    // mettre les skill dans un tableau
+    let skillsTitle = document.querySelector('.skillsTitle');
+    let skillsTable = document.querySelector('.skillsTable');
+        
+    for (let i = 0; i < skillTab.length; i++ ){
+        let skill = skillTab[i];
+        // cacher le <p>
+        //skill.children[1].style.display = 'none';
+        // centrer les elements
+        skill.classList.add('skillCentered');
+        // positionner en cercle
+        positionCercle(skill, angle*i);
+
+    }
+    
+    enPosition = true;
+    tourner();
+}
+
+function demarrage(){
+    if(anim != null){
+        cancelAnimationFrame(anim);
+        anim = null;        
+        pointBleu.style.animation = 'none';
+        return;
+    }
+    // si premiere fois -> mise en place
+    if(!enPosition){
+        miseEnRond();
+    }else{ // sinon, juste relancer
+        iconeCentre = false;
+        pointBleu.style.animation = 'skillsTurning 2s linear infinite forwards';
+        tourner();
+    }
+}
+demarrage();
+
+function afficheTechno(e){
+    if(iconeCentre){
+        return;
+    }
+    let img = e.path[3];
+    let a = e.path[2];
+    let p = img.children[1];
+    img.style.left = '50%';
+    img.style.top = '50%';
+    p.style.display = 'block';
+    pointBleu.style.animation = 'skillInCenter 2s linear infinite forwards';
+
+    derniereIconeP = p;
+    iconeCentre = true;
+}

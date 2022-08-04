@@ -32,28 +32,31 @@
             <div id="entree">
                 <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
                 <canvas id="canvas"></canvas>
-                <p>
-                <span style="--i:1;">S</span>
-                <span style="--i:2;">Y</span>
-                <span style="--i:3;">L</span>
-                <span style="--i:4;">V</span>
-                <span style="--i:5;">A</span>
-                <span style="--i:6;">I</span>
-                <span style="--i:7;">N</span>
-                <span style="--i:8;">&nbsp;</span></p>
-                <p>
-                <span style="--i:9;">F</span>
-                <span style="--i:10;">O</span>
-                <span style="--i:11;">U</span>
-                <span style="--i:12;">C</span>
-                <span style="--i:13;">A</span>
-                <span style="--i:14;">U</span>
-                <span style="--i:15;">L</span>
-                <span style="--i:16;">T</span></p>
-
+                <div class="nom">
+                    <p>
+                        <span style="--i:1;">S</span>
+                        <span style="--i:2;">Y</span>
+                        <span style="--i:3;">L</span>
+                        <span style="--i:4;">V</span>
+                        <span style="--i:5;">A</span>
+                        <span style="--i:6;">I</span>
+                        <span style="--i:7;">N</span>
+                        <span style="--i:8;">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style="--i:9;">F</span>
+                        <span style="--i:10;">O</span>
+                        <span style="--i:11;">U</span>
+                        <span style="--i:12;">C</span>
+                        <span style="--i:13;">A</span>
+                        <span style="--i:14;">U</span>
+                        <span style="--i:15;">L</span>
+                        <span style="--i:16;">T</span>
+                    </p>
+                </div>
                 <h1 id="webdev">DEVELOPPEUR WEB</h1>
 
-                <a id="lienBienvenu" onclick="scrollToBienvenu()">
+                <a id="lienBienvenu" class="lien" onclick="scrollToBienvenu()">
                     <svg width="24px" height="24px" viewBox="0 0 24 24">
                         <g id="Iconly/Two-tone/Arrow---Down-2" stroke="none" stroke-width="1"
                             fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -68,11 +71,11 @@
         </section>
 
 
-        <section id="mot" onshow="afficherElements()">            
+        <section id="mot">            
 
             <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
 
-            <a id="lienTop" onclick="scrollToTop()">
+            <a id="lienTop" class="lien" onclick="scrollToTop()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g id="Iconly/Two-tone/Arrow---Up-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
                         <g id="Arrow---Up-2" transform="translate(12.000000, 12.000000) rotate(-180.000000) translate(-12.000000, -12.000000) 
@@ -92,13 +95,11 @@
                 <p class="rvt2">    
                     avec un goût pour le <span class="bleuFonceColor">web</span>,</p>
                 <p class="rvt3">    
-                    je suis toujours en quête d'inspiration, d'<span class="bleuFonceColor">originalité</span>.</p>   
+                    je suis toujours en quête d'inspiration, d'<span class="bleuFonceColor">originalité</span>.</p>
+                <img src="./images/portraitDessin2.png" class="portraitDessin" alt="portrait dessin">       
             </div>
-            
-            <img src="./images/desktop.svg" class="desktop">        
-                    
-
-            <a id="lienRealisations" onclick="scrollToRealisations()">
+                        
+            <a id="lienRealisations" class="lien" onclick="scrollToRealisations()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g stroke="none" stroke-width="1"
                         fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -115,7 +116,7 @@
 
             <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
 
-            <a id="lienBackBienvenu" onclick="scrollBackToBienvenu()">
+            <a id="lienBackBienvenu" class="lien" onclick="scrollBackToBienvenu()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g id="Iconly/Two-tone/Arrow---Up-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
                         <g id="Arrow---Up-2" transform="translate(12.000000, 12.000000) rotate(-180.000000) translate(-12.000000, -12.000000) 
@@ -128,12 +129,7 @@
 
             <div>
             
-                <div class="expoMvt">
-                    <div class="premierMot bleuColor">Exposition</div> 
-                    <div class="suite bleuColor"> 
-                        <span>de mes réalisations</span>
-                    </div>
-                </div>                         
+                <h2 class="bleuColor">Réalisations</h2>                        
 
                 <div class="carouselDiv">
 
@@ -152,15 +148,20 @@
                     
                     <div class="container">
                         <div class="carousel">
-                            <img src="./images/airGoRun.png" alt="airgo run" id="airGoRunScreen">
+                            <img src="./images/airGoRun.png" alt="airgo run" id="airGoRunScreen">                            
                             <img src="./images/sportEmploi.png" alt="sport emploi" id="sportEmploi">
                             <img src="./images/bandd.png" alt="bien etre et diététique" id="bandd">
                             <img src="./images/contactFormAMP.png" alt="formulaire de contact" id="contactForm">
                             <img src="./images/MielConnect/MCheader.png" alt="miel connect" id="mielConnect">
-                            <img src="./images/RCMortagne/RCMortagne.jpg" alt="RC Mortagne" id="RCMortagne">
-                            
+                            <img src="./images/RCMortagne/RCMortagne.jpg" alt="RC Mortagne" id="RCMortagne">                            
                         </div>
                     </div> 
+                    <p id="AirGoP">Projet AirGo Run</p>
+                    <p id="SportEmploiP">Projet Sport emploi</p>
+                    <p id="BandDP">Projet Bien être et diététique</p>
+                    <p id="AMPContactP">Page contact projet AMP</p>
+                    <p id="MielConnectP">Projet Miel Connect</p>
+                    <p id="RCMortagneP">Projet RC Mortagne</p>
                 </div>                                   
                 
                 <div id="overlay">
@@ -185,7 +186,7 @@
                 </div>
                     
             </div>
-            <a id="lienSkills" onclick="scrollToSkills()">
+            <a id="lienSkills" class="lien" onclick="scrollToSkills()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g stroke="none" stroke-width="1"
                         fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -201,7 +202,7 @@
 
             <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
 
-            <a id="lienBackToRealisations" onclick="scrollBackToRealisations()">
+            <a id="lienBackToRealisations" class="lien" onclick="scrollBackToRealisations()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g id="Iconly/Two-tone/Arrow---Up-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
                         <g id="Arrow---Up-2" transform="translate(12.000000, 12.000000) rotate(-180.000000) translate(-12.000000, -12.000000) 
@@ -216,42 +217,114 @@
                 <h2 class="bleuColor">Compétences</h2>
             </div>
             <div class="skillsTable">
-                <a href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language" target="_blank"><div class="contourLogo"><img src="./images/logos/javascripthtmlcss.png"></div></a>                    
-            
-                <a href="https://fr.wikipedia.org/wiki/PHP" target="_blank"><div class="contourLogo"><img src="./images/logos/PHP-logo.svg"></div></a>                                    
-            
-                <a href="https://fr.wikipedia.org/wiki/WampServer" target="_blank"><div class="contourLogo"><img src="./images/logos/WampServer-logo.png"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/JQuery" target="_blank"><div class="contourLogo"><img src="./images/logos/jQuery.png"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/Node.js" target="_blank"><div class="contourLogo"><img src="./images/logos/Node.js_logo.svg"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/Symfony" target="_blank"><div class="contourLogo"><img src="./images/logos/symfony_logo_vertical.png.webp"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/React" target="_blank"><div class="contourLogo"><img src="./images/logos/React-icon.svg"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/Next.js" target="_blank"><div class="contourLogo"><img src="./images/logos/Nextjs-logo.svg"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/PostgreSQL" target="_blank"><div class="contourLogo"><img src="./images/logos/postgreSql.png"></div></a>                
-            
-                <a href="https://www.prisma.io/" target="_blank"><div class="contourLogo"><img src="./images/logos/prisma-2.svg"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/Bootstrap_(framework)" target="_blank"><div class="contourLogo"><img src="./images/logos/Bootstrap_logo.png"></div></a>
+                <div class="skill">
+                    <a data="https://fr.wikipedia.org/wiki/HTML" target="_blank">
+                        <div class="contourLogo" >
+                            <img src="./images/logos/javascripthtmlcss.png" onclick="afficheTechno(event)">
+                        </div>
+                    </a>  
+                    <p>HTML, CSS ainsi que Javascript sont la base de tous site internet. J'ai utilisé ces langages dans chaque projet.</p>                  
+                </div>
+                <div class="skill">
+                    <a data="https://fr.wikipedia.org/wiki/PHP" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/PHP-logo.svg" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>J'ai utilisé PHP dans des exercices et TPs, PHP étant le langage côté serveur le plus utilisé.</p>                                                      
+                </div>
+                <div class="skill">
+                    <a data="https://fr.wikipedia.org/wiki/WampServer" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/WampServer-logo.png" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>WampServer est un outils trés pratique incluant un serveur apache ainsi que mySql pour les bases de données.</p>                                  
+                </div>
+                <div class="skill">                 
+                    <a data="https://fr.wikipedia.org/wiki/Symfony" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/symfony_logo_vertical.png.webp" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>Symfony est un framework basé sur PHP. Je l'ai utilisé notamment pour mon projet RCMortagne.</p>                                  
+                </div>
+                <div class="skill">
+                    <a data="https://fr.wikipedia.org/wiki/Node.js" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/Node.js_logo.svg" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>NodeJs est un langage côté serveur basé sur Javascript. Je l'ai utilisé pour mon projet Blog.</p>                                  
+                </div>
+                <div class="skill">
+                    <a data="https://fr.wikipedia.org/wiki/React" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/React-icon.svg" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>J'ai utilisé le framework React dans mon projet react-portfolio.</p>                                  
+                </div>
+                <div class="skill">
+                    <a data="https://fr.wikipedia.org/wiki/Next.js" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/Nextjs-logo.svg" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>J'ai utilisé le framework NextJs dans mon projet Blog.</p>                                  
+                </div>
+                <div class="skill">
+                    <a data="https://fr.wikipedia.org/wiki/PostgreSQL" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/postgreSql.png" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>J'ai utilisé le système de gestion de base de données PostgreSql dans mon projet Blog.</p>                                  
+                </div>
+                <div class="skill">
+                    <a data="https://www.prisma.io/" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/prisma-2.svg" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>J'ai utilisé l'ORM Prisma dans mon projet Blog.</p>                                  
+                </div>
+                <div class="skill">
+                    <a data="https://fr.wikipedia.org/wiki/Bootstrap_(framework)" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/Bootstrap_logo.png" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>J'ai utilisé Bootstrap dans différents projets, pour le positionnement.</p>                  
+                </div>
+                <div class="skill">
+                    <a data="https://fr.wikipedia.org/wiki/Wordpress" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/wordpressLogo.png" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>J'ai développé avec Wordpress le projet Miel Connect.</p>                  
+                </div>
+                <div class="skill">
+                    <a data="https://fr.wikipedia.org/wiki/Figma" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/figma-logo-carre_500x.webp" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>J'ai utilisé Figma à plusieurs reprises pour faire les maquettes. (airGoRun, B/D)</p>                                  
+                </div>
+                <div class="skill">                             
+                    <a data="https://fr.wikipedia.org/wiki/GitHub" target="_blank">
+                        <div class="contourLogo">
+                            <img src="./images/logos/GitHub-Logo.png" onclick="afficheTechno(event)">
+                        </div>
+                    </a>
+                    <p>Une bonne partie des développements sur lesquels j'ai travaillé sont sur Github.</p>                                                  
+                </div>
 
-                <a href="https://fr.wikipedia.org/wiki/Wordpress" target="_blank"><div class="contourLogo"><img src="./images/logos/wordpressLogo.png"></div></a>
-
-                <a href="https://fr.wikipedia.org/wiki/Figma" target="_blank"><div class="contourLogo"><img src="./images/logos/figma-logo-carre_500x.webp"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/Canva" target="_blank"><div class="contourLogo"><img src="./images/logos/Canva-Logo.png"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/Trello" target="_blank"><div class="contourLogo"><img src="./images/logos/trello-logo.png"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/Git" target="_blank"><div class="contourLogo"><img src="./images/logos/git.png"></div></a>                
-            
-                <a href="https://fr.wikipedia.org/wiki/GitHub" target="_blank"><div class="contourLogo"><img src="./images/logos/GitHub-Logo.png"></div></a>                                
-
+                <div class="centreSkills" onclick="demarrage()"></div>
             </div>
-            <a id="lienContact" onclick="scrollToContact()">
+            <a id="lienContact" class="lien" onclick="scrollToContact()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g stroke="none" stroke-width="1"
                         fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -267,7 +340,7 @@
 
             <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
 
-            <a id="lienBackToSkills" onclick="scrollBackToSkills()">
+            <a id="lienBackToSkills" class="lien" onclick="scrollBackToSkills()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g id="Iconly/Two-tone/Arrow---Up-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
                         <g id="Arrow---Up-2" transform="translate(12.000000, 12.000000) rotate(-180.000000) translate(-12.000000, -12.000000) 
