@@ -132,7 +132,7 @@
                 <h2 class="bleuColor">Réalisations</h2>                        
 
                 <div class="carouselDiv">
-
+                    <!--
                     <input checked id="one" name="multiples" type="radio" value="1">
                     <label for="one">1</label>            
                     <input id="two" name="multiples" type="radio" value="2">
@@ -145,46 +145,45 @@
                     <label for="five">5</label>                
                     <input id="six" name="multiples" type="radio" value="6">
                     <label for="six">6</label> 
-                    
+                    -->
                     <div class="container">
-                        <div class="carousel">
-                            <img src="./images/airGoRun.png" alt="airgo run" id="airGoRunScreen">                            
-                            <img src="./images/sportEmploi.png" alt="sport emploi" id="sportEmploi">
-                            <img src="./images/bandd.png" alt="bien etre et diététique" id="bandd">
-                            <img src="./images/contactFormAMP.png" alt="formulaire de contact" id="contactForm">
-                            <img src="./images/MielConnect/MCheader.png" alt="miel connect" id="mielConnect">
-                            <img src="./images/RCMortagne/RCMortagne.jpg" alt="RC Mortagne" id="RCMortagne">                            
+                        <div class="carousel">                                
+                            <img src="./images/airGoRun.png" alt="airgo run" id="airGoRunScreen" ondragstart="drag1(event)" ontouchstart="touch1(event)">                                                                                    
+                            <img src="./images/contactFormAMP.png" alt="formulaire de contact" id="contactForm" ondragstart="drag2(event)" ontouchstart="touch2(event)">
+                            <img src="./images/blogAPI.png" alt="une api pour un blog" id="blogAPI" ondragstart="drag3(event)" ontouchstart="touch3(event)">
+                            <img src="./images/MielConnect/MCheader.png" alt="miel connect" id="mielConnect" ondragstart="drag4(event)" ontouchstart="touch4(event)">
+                            <img src="./images/RCMortagne/RCMortagne.jpg" alt="RC Mortagne" id="RCMortagne" ondragstart="drag5(event)" ontouchstart="touch5(event)">
+                            <img src="./images/nature.png" alt="nature point de vue" id="naturePV" onclick="document.location = 'nature.php';" ondragstart="drag6(event)" ontouchstart="touch6(event)">                            
                         </div>
                     </div> 
-                    <p id="AirGoP">Projet AirGo Run</p>
-                    <p id="SportEmploiP">Projet Sport emploi</p>
-                    <p id="BandDP">Projet Bien être et diététique</p>
-                    <p id="AMPContactP">Page contact projet AMP</p>
-                    <p id="MielConnectP">Projet Miel Connect</p>
-                    <p id="RCMortagneP">Projet RC Mortagne</p>
+                    
+                    <div id="descProj1" class="descProj"><h4 id="AirGoP">Projet AirGo Run</h4><p>Premier projet design puis intégration, promotion de montres sportives.</p></div>                                        
+                    <div id="descProj2" class="descProj"><h4 id="AMPContactP">Page contact projet AMP</h4><p>Projet de stage, création d'une page web pour le site AMP.</p></div>
+                    <div id="descProj3" class="descProj"><h4 id="BlogAPIP">Projet blog API</h4><p>Projet de stage, une API nodeJS TypeScript pour une application Blog.</p></div>
+                    <div id="descProj4" class="descProj"><h4 id="MielConnectP">Projet Miel Connect</h4><p>Intégration d'une maquette faite par des designers. Projet Miel Connect.</p></div>
+                    <div id="descProj5" class="descProj"><h4 id="RCMortagneP">Projet RC Mortagne</h4><p>Mon projet de formation, développer le site d'une équpe de football avec Symfony.</p></div>
+                    <div id="descProj6" class="descProj"><h4 id="NaturePVP">Projet Nature</h4><p>Création d'une page avec l'effet parallax.</p></div>
+
                 </div>                                   
                 
                 <div id="overlay">
                     <img src="./images/airGoRun.png" id="airGoRunBigScreen" alt="airGoRun big screen">
-                </div>                
+                </div>                                
                 <div id="overlay2">
-                    <img src="./images/sportEmploi.png" id="sportEmploiBigScreen" alt="sport emploi screen">
-                </div>
-                <div id="overlay3">
-                    <img src="./images/bandd.png" id="banddBigScreen" alt="bien etre et diététique">
-                </div>
-                <div id="overlay4">
                     <img src="./images/contactFormAMP.png" id="contactFormBigScreen" alt="formulaire de contact">
                 </div>
-                <div id="overlay5">
+                <div id="overlay3">
+                    <img src="./images/blogAPI.png" id="blogAPIBigScreen" alt="blog API">
+                </div>
+                <div id="overlay4">
                     <img src="./images/MielConnect/MCheader.png" id="mielConnectBigScreen" alt="miel connect grand">
                     <img src="./images/MielConnect/MCpres.png" id="mielConnect2BigScreen" alt="miel connect grand">
                 </div>
-                <div id="overlay6">
+                <div id="overlay5">
                     <img src="./images/RCMortagne/RCMortagne.jpg" id="RCMortagneBigScreen" alt="RC Mortagne grand">
                     <img src="./images/RCMortagne/lactu.png" id="RCMActuBigScreen" alt="RC Mortagne grand">
                 </div>
-                    
+                  
             </div>
             <a id="lienSkills" class="lien" onclick="scrollToSkills()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -366,6 +365,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>    
     <script src="./js/script.js"></script>
+    <script src="./js/carousel.js"></script>
 </body>
 
 </html>

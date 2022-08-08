@@ -1,45 +1,39 @@
 /*----------overlay------------------------------------*/
 document.getElementById("airGoRunScreen").addEventListener("click", () => {
-    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").style.display = "block";    
 });
 document.getElementById("overlay").addEventListener("click", () => {
     document.getElementById("overlay").style.display = "none";
 });
-/*------------overlay2-------------------------------*/
-document.getElementById("sportEmploi").addEventListener("click", () => {
+/*------------overlay2---------------------------------*/
+document.getElementById("contactForm").addEventListener("click", () => {
     document.getElementById("overlay2").style.display = "block";
 });
 document.getElementById("overlay2").addEventListener("click", () => {
     document.getElementById("overlay2").style.display = "none";
 });
 /*------------overlay3---------------------------------*/
-document.getElementById("bandd").addEventListener("click", () => {
+document.getElementById("blogAPI").addEventListener("click", () => {
     document.getElementById("overlay3").style.display = "block";
 });
 document.getElementById("overlay3").addEventListener("click", () => {
     document.getElementById("overlay3").style.display = "none";
 });
 /*------------overlay4---------------------------------*/
-document.getElementById("contactForm").addEventListener("click", () => {
+document.getElementById("mielConnect").addEventListener("click", () => {
     document.getElementById("overlay4").style.display = "block";
 });
 document.getElementById("overlay4").addEventListener("click", () => {
     document.getElementById("overlay4").style.display = "none";
 });
 /*------------overlay5---------------------------------*/
-document.getElementById("mielConnect").addEventListener("click", () => {
+document.getElementById("RCMortagne").addEventListener("click", () => {
     document.getElementById("overlay5").style.display = "block";
 });
 document.getElementById("overlay5").addEventListener("click", () => {
     document.getElementById("overlay5").style.display = "none";
 });
-/*------------overlay6---------------------------------*/
-document.getElementById("RCMortagne").addEventListener("click", () => {
-    document.getElementById("overlay6").style.display = "block";
-});
-document.getElementById("overlay6").addEventListener("click", () => {
-    document.getElementById("overlay6").style.display = "none";
-});
+
 /*---------------------------------------------------------------scrolls----------------------------------------------------------------------*/
 function scrollToBienvenu(){
     window.scrollTo({
@@ -410,23 +404,10 @@ function checkMessage(){
 };
 
 /* ------------------------------- raffraichissement aprés un rotate du telephone -----------------------------*/
-let mobileOrientation = "portrait";
-let backFromLandscape = false;
 
 window.addEventListener('resize', function(){
 
-    if (window.matchMedia("(orientation: landscape)").matches) {
-        mobileOrientation = "landscape";
-        backFromLandscape = true;
-    }
-    if (window.matchMedia("(orientation: portrait)").matches) {
-        mobileOrientation = "portrait";        
-    }
-    if (window.matchMedia("(orientation: portrait)").matches && backFromLandscape) {
-        location.reload();
-        mobileOrientation = "portrait";
-        backFromLandscape = false;
-    }
+    location.reload();
 });
 
 /*-------------------------------Mise En Rond----------------------------------------------------------------------*/

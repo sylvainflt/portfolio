@@ -235,23 +235,22 @@ h3{
 .portraitDessin {
     width: 60%;
 }
-
 #airGoRunScreen,
-#sportEmploi,
-#bandd,
 #contactForm,
+#blogAPI,
 #mielConnect,
-#RCMortagne {
+#RCMortagne,
+#naturePV {
     width: 100%;
     transition: transform .7s;
 }
 
 #airGoRunScreen:hover,
-#sportEmploi:hover,
-#bandd:hover,
 #contactForm:hover,
+#blogAPI:hover,
 #mielConnect:hover,
-#RCMortagne:hover
+#RCMortagne:hover,
+#naturePV
 {
     cursor: pointer;
 }
@@ -295,8 +294,7 @@ main {
 #overlay2,
 #overlay3,
 #overlay4,
-#overlay5,
-#overlay6 {
+#overlay5 {
     position: fixed;
     display: none;
     width: 100%;
@@ -312,15 +310,14 @@ main {
 }
 
 #airGoRunBigScreen,
-#sportEmploiBigScreen,
-#banddBigScreen,
 #contactFormBigScreen,
+#blogAPIBigScreen,
 #mielConnectBigScreen,
 #mielConnect2BigScreen,
 #RCMortagneBigScreen,
 #RCMActuBigScreen{
     width: 80%;
-    margin-top: 100px;
+    margin-top: 10vh;
     /*position: absolute;
     top: 50%;
     left: 50%;
@@ -532,14 +529,16 @@ footer {
     margin: 50px auto;
     text-align: center;
 }
-
+.carouselDiv h4 {
+    color: #090979;
+    margin-top: 2vh;
+}
 .carouselDiv p {
     
-    font-size: 2rem;
+    font-size: 1rem;
     color: #1020dd;
     margin-top: 2vh;
 }
-
 .container {
     width: 500px;
     height: 300px;
@@ -566,6 +565,7 @@ footer {
             width: 500px;
             height: 300px;
             background:#ccc;
+            touch-action: none;
         }
 
             
@@ -620,18 +620,28 @@ input[value="5"]:checked ~ .container .carousel img:nth-child(5) { transform: ro
 input[value="6"]:checked ~ .container .carousel img:nth-child(6) { transform: rotateY(300deg) translateZ(450px) scale(1); opacity: 1; }
 /*input[value="7"]:checked ~ .container .carousel img:nth-child(7) { transform: rotateY(270deg) translateZ(540px) scale(1); opacity: 1; }
 input[value="8"]:checked ~ .container .carousel img:nth-child(8) { transform: rotateY(315deg) translateZ(540px) scale(1); opacity: 1; }*/
-#AirGoP { display: none; }
-input[value="1"]:checked ~ #AirGoP { display: block; }
-#SportEmploiP { display: none; }
-input[value="2"]:checked ~ #SportEmploiP { display: block; }
-#BandDP { display: none; }
-input[value="3"]:checked ~ #BandDP { display: block; }
-#AMPContactP { display: none; }
-input[value="4"]:checked ~ #AMPContactP { display: block; }
-#MielConnectP { display: none; }
-input[value="5"]:checked ~ #MielConnectP { display: block; }
-#RCMortagneP { display: none; }
-input[value="6"]:checked ~ #RCMortagneP { display: block; }
+
+#descProj1 { display: none; }
+input[value="1"]:checked ~ #descProj1 { display: block; }
+#descProj2 { display: none; }
+input[value="2"]:checked ~ #descProj2 { display: block; }
+#descProj3 { display: none; }
+input[value="3"]:checked ~ #descProj3 { display: block; }
+#descProj4 { display: none; }
+input[value="4"]:checked ~ #descProj4 { display: block; }
+#descProj5 { display: none; }
+input[value="5"]:checked ~ #descProj5 { display: block; }
+#descProj6 { display: none; }
+input[value="6"]:checked ~ #descProj6 { display: block; }
+/*
+#airGoRunScreen{
+    transform: translateZ(450px) scale(1); 
+    opacity: 1;
+}
+*/
+.descProj {
+    min-height: 15vh;
+}
 
 /*--------------------------------------------------------RESPONSIVE-------------------------------------------------------------------------------*/
 
@@ -898,8 +908,14 @@ input[value="6"]:checked ~ #RCMortagneP { display: block; }
     input[value="4"]:checked ~ .container .carousel img:nth-child(4) { transform: rotateY(180deg) translateZ(270px) scale(1); opacity: 1; }
     input[value="5"]:checked ~ .container .carousel img:nth-child(5) { transform: rotateY(240deg) translateZ(270px) scale(1); opacity: 1; }
     input[value="6"]:checked ~ .container .carousel img:nth-child(6) { transform: rotateY(300deg) translateZ(270px) scale(1); opacity: 1; }    
-
+/*
+    #airGoRunScreen{
+        transform: translateZ(270px) scale(1); 
+        opacity: 1;
+    }
+*/
 }
+
 @media screen and (max-width: 550px) { /*=========================================================================================================================*/
     .carouselDiv {
         width: 164px;   
@@ -961,7 +977,12 @@ input[value="6"]:checked ~ #RCMortagneP { display: block; }
     input[value="4"]:checked ~ .container .carousel img:nth-child(4) { transform: rotateY(180deg) translateZ(135px) scale(1); opacity: 1; }
     input[value="5"]:checked ~ .container .carousel img:nth-child(5) { transform: rotateY(240deg) translateZ(135px) scale(1); opacity: 1; }
     input[value="6"]:checked ~ .container .carousel img:nth-child(6) { transform: rotateY(300deg) translateZ(135px) scale(1); opacity: 1; }
-        
+      /*  
+    #airGoRunScreen{
+        transform: translateZ(135px) scale(1); 
+        opacity: 1;
+    }
+*/
     #mot h2{
         font-size: .8em;
     }
@@ -1037,9 +1058,12 @@ input[value="6"]:checked ~ #RCMortagneP { display: block; }
     }
 }
 @media screen and (max-width: 375px) {  /*==========================================================================================================================*/
+    #entree span {
+        /*font-size: 1.3em;*/
+    }  
     #mot h2 {
         font-size: .7em;
-    }    
+    }      
     .skillsTable {
         width: 40vh;
         height: 40vh;       
