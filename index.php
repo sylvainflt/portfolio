@@ -32,6 +32,7 @@
             <div id="entree">
                 <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
                 <canvas id="canvas"></canvas>
+                
                 <div class="nom">
                     <p>
                         <span style="--i:1;">S</span>
@@ -55,6 +56,8 @@
                     </p>
                 </div>
                 <h1 id="webdev">DEVELOPPEUR WEB</h1>
+
+                <img id="photoEntree" src="./images/photo.png" alt="ma photo">
 
                 <a id="lienBienvenu" class="lien" onclick="scrollToBienvenu()">
                     <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -97,8 +100,8 @@
                 <p class="rvt3">    
                     je suis toujours en quête d'inspiration, d'<span class="bleuFonceColor">originalité</span>.</p>
                 <img src="./images/portraitDessin2.png" class="portraitDessin" alt="portrait dessin">       
-            </div>
-                        
+            </div>                                    
+
             <a id="lienRealisations" class="lien" onclick="scrollToRealisations()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g stroke="none" stroke-width="1"
@@ -111,11 +114,10 @@
             </a>
         </section>
 
-
         <section class="titleScreens" id="realisations">            
 
             <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
-
+                
             <a id="lienBackBienvenu" class="lien" onclick="scrollBackToBienvenu()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g id="Iconly/Two-tone/Arrow---Up-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -160,7 +162,7 @@
                     <div id="descProj1" class="descProj"><h4 id="AirGoP">Projet AirGo Run</h4><p>Premier projet design puis intégration, promotion de montres sportives.</p></div>                                        
                     <div id="descProj2" class="descProj"><h4 id="AMPContactP">Page contact projet AMP</h4><p>Projet de stage, création d'une page web pour le site AMP.</p></div>
                     <div id="descProj3" class="descProj"><h4 id="BlogAPIP">Projet blog API</h4><p>Projet de stage, une API nodeJS TypeScript pour une application Blog.</p></div>
-                    <div id="descProj4" class="descProj"><h4 id="MielConnectP">Projet Miel Connect</h4><p>Intégration d'une maquette faite par des designers. Projet Miel Connect.</p></div>
+                    <div id="descProj4" class="descProj"><h4 id="MielConnectP">Projet Miel Connect</h4><p>Intégration d'une maquette faite par des designers. Projet Miel Connect avec Wordpress.</p></div>
                     <div id="descProj5" class="descProj"><h4 id="RCMortagneP">Projet RC Mortagne</h4><p>Mon projet de formation, développer le site d'une équpe de football avec Symfony.</p></div>
                     <div id="descProj6" class="descProj"><h4 id="NaturePVP">Projet Nature</h4><p>Création d'une page avec l'effet parallax.</p></div>
 
@@ -183,7 +185,7 @@
                     <img src="./images/RCMortagne/RCMortagne.jpg" id="RCMortagneBigScreen" alt="RC Mortagne grand">
                     <img src="./images/RCMortagne/lactu.png" id="RCMActuBigScreen" alt="RC Mortagne grand">
                 </div>
-                  
+                
             </div>
             <a id="lienSkills" class="lien" onclick="scrollToSkills()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -199,7 +201,7 @@
 
         <section class="skills" id="competences">
 
-            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
+            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>                
 
             <a id="lienBackToRealisations" class="lien" onclick="scrollBackToRealisations()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -213,7 +215,7 @@
             </a>
 
             <div class="skillsTitle">
-                <h2 class="bleuColor">Compétences</h2>
+                <h2 class="bleuColor competences">Compétences</h2>
             </div>
             <div class="skillsTable">
                 <div class="skill">
@@ -337,7 +339,7 @@
 
         <section class="contact" id="contact">
 
-            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
+            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>                
 
             <a id="lienBackToSkills" class="lien" onclick="scrollBackToSkills()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -353,17 +355,15 @@
             <h2 class="bleuColor" id="titreContact">Contact</h2>
 
             <?php include 'formContact.php'; ?>
-
+            
         </section>
-
-
 
     </main>
     <footer class="bleuColor">Sylvain Foucault - <a class="bleuColor" href="mentionsLegales.php" target="_blank">Mentions Légales</a></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>     
     <script src="./js/script.js"></script>
     <script src="./js/carousel.js"></script>
 </body>

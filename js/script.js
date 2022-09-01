@@ -1,32 +1,32 @@
-/*----------overlay------------------------------------*/
+//----------overlay------------------------------------
 document.getElementById("airGoRunScreen").addEventListener("click", () => {
     document.getElementById("overlay").style.display = "block";    
 });
 document.getElementById("overlay").addEventListener("click", () => {
     document.getElementById("overlay").style.display = "none";
 });
-/*------------overlay2---------------------------------*/
+//------------overlay2---------------------------------
 document.getElementById("contactForm").addEventListener("click", () => {
     document.getElementById("overlay2").style.display = "block";
 });
 document.getElementById("overlay2").addEventListener("click", () => {
     document.getElementById("overlay2").style.display = "none";
 });
-/*------------overlay3---------------------------------*/
+//------------overlay3---------------------------------
 document.getElementById("blogAPI").addEventListener("click", () => {
     document.getElementById("overlay3").style.display = "block";
 });
 document.getElementById("overlay3").addEventListener("click", () => {
     document.getElementById("overlay3").style.display = "none";
 });
-/*------------overlay4---------------------------------*/
+//------------overlay4---------------------------------
 document.getElementById("mielConnect").addEventListener("click", () => {
     document.getElementById("overlay4").style.display = "block";
 });
 document.getElementById("overlay4").addEventListener("click", () => {
     document.getElementById("overlay4").style.display = "none";
 });
-/*------------overlay5---------------------------------*/
+//------------overlay5---------------------------------
 document.getElementById("RCMortagne").addEventListener("click", () => {
     document.getElementById("overlay5").style.display = "block";
 });
@@ -35,6 +35,7 @@ document.getElementById("overlay5").addEventListener("click", () => {
 });
 
 /*---------------------------------------------------------------scrolls----------------------------------------------------------------------*/
+
 function scrollToBienvenu(){
     window.scrollTo({
         top: window.innerHeight,
@@ -63,6 +64,7 @@ function scrollToContact(){
         behavior: 'smooth'
       });
 }
+
 function scrollBackToSkills(){
     window.scrollTo({
         top: 3*window.innerHeight,
@@ -91,6 +93,7 @@ function scrollToTop(){
         behavior: 'smooth'
       });
 }
+
 /*----------------------------------------------------------------entree----------------------------------------------------------------------*/
 
 let container = document.getElementById('entree');
@@ -101,7 +104,9 @@ container.addEventListener('mousemove', function(e) {
     document.getElementById('webdev').style.transform = 'translate(' + X / 100 * 4 + 'px,' + Y / 100 * 4 + 'px)';
     document.getElementById('lienBienvenu').style.transform = 'translate(' + X / 100 * 7 + 'px,' + Y / 100 * 7 + 'px)';
 });
+
 /*-------------------------------------------------------------------sortie-----------------------------------------------------------------------------*/
+
 function souffleNuages(e){
     let X = e.pageX;
     let Y = e.pageY;
@@ -126,7 +131,9 @@ window.addEventListener('resize', function(){
         contact.removeEventListener('mousemove', souffleNuages);
     }
 });
+
 /* ---------------------- en cas de superposition des champs ----------------*/
+
 document.getElementById('nameContact').addEventListener('focus', function(){
     document.getElementById('nuageNom').style.zIndex = "1";
     document.getElementById('nuageObjet').style.zIndex = "0";
@@ -153,10 +160,11 @@ document.getElementById('message').addEventListener('focus', function(){
     document.getElementById('nuageEmail').style.zIndex = "0";
     document.getElementById('nuageMessage').style.zIndex = "1";
 });
+
 /*-------------------------------------------------------------------canvas-----------------------------------------------------------------------------*/
 
 const canvas = document.getElementById('canvas');
-const ctx2 = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height= window.innerHeight;
 const particlesArray = [];
@@ -164,24 +172,24 @@ const particlesArray = [];
 
 window.addEventListener('resize', function(){
     canvas.width = window.innerWidth;
-    canvas.height= window.innerHeight;
+    canvas.height= window.innerHeight;    
     //this.location.reload();
 })
 
-const mouse2 = {
+const mouse = {
     x: undefined,
     y: undefined,
 }
 canvas.addEventListener('click', function(event){
-    mouse2.x = event.offsetX;
-    mouse2.y = event.offsetY;
+    mouse.x = event.offsetX;
+    mouse.y = event.offsetY;
     for(let i = 0; i< 10; i++){
         particlesArray.push(new Particle());
     }
 });
 canvas.addEventListener('mousemove', function(event){
-    mouse2.x = event.offsetX;
-    mouse2.y = event.offsetY;
+    mouse.x = event.offsetX;
+    mouse.y = event.offsetY;
     for(let i = 0; i< 5; i++){
         particlesArray.push(new Particle());
     }
@@ -189,8 +197,8 @@ canvas.addEventListener('mousemove', function(event){
 
 class Particle {
     constructor(){
-        this.x = mouse2.x;
-        this.y = mouse2.y;        
+        this.x = mouse.x;
+        this.y = mouse.y;        
         this.size = Math.random() * 10 + 1;
         this.speedX = Math.random() * 3 -1.5;
         this.speedY = Math.random() * 3 -1.5;
@@ -203,13 +211,12 @@ class Particle {
         if(this.size > 0.2) this.size  -= 0.1;
     }
     draw(){
-        ctx2.fillStyle = this.color;
-        ctx2.beginPath();
-        ctx2.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx2.fill();
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
     }
 }
-
 function handleParticles(){
     for (let i = 0; i < particlesArray.length; i++){
         particlesArray[i].update();
@@ -219,13 +226,13 @@ function handleParticles(){
             const dy = particlesArray[i].y - particlesArray[j].y;
             const distance = Math.sqrt(dx*dx + dy*dy);
             if(distance < 100){
-                ctx2.beginPath();
-                ctx2.strokeStyle = particlesArray[i].color;
-                ctx2.lineWidth = 0.2;
-                ctx2.moveTo(particlesArray[i].x, particlesArray[i].y);
-                ctx2.lineTo(particlesArray[j].x, particlesArray[j].y);
-                ctx2.stroke();
-                ctx2.closePath();
+                ctx.beginPath();
+                ctx.strokeStyle = particlesArray[i].color;
+                ctx.lineWidth = 0.2;
+                ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                ctx.stroke();
+                ctx.closePath();
             }
         }
         if(particlesArray[i].size <= 0.3){
@@ -234,20 +241,20 @@ function handleParticles(){
         }
     }
 }
-function animate2(){
-    ctx2.clearRect(0,0, canvas.width, canvas.height);
-    //ctx2.fillStyle = 'rgba(0,0,0,0.02)';
-    //ctx2.fillRect(0, 0, canvas.width, canvas.height);
+function animate(){
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+    //ctx.fillStyle = 'rgba(0,0,0,0.02)';
+    //ctx.fillRect(0, 0, canvas.width, canvas.height);
     handleParticles();
     //hue+=2;
 
-    requestAnimationFrame(animate2);
+    requestAnimationFrame(animate);
 }
-animate2();
+animate();
 
 window.addEventListener('scroll', function(){
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight;    
 });
 
 /*----------------------------------------------------------------- Contact Form--------------------------------------------------------------*/
@@ -272,6 +279,7 @@ function contactSubmit(){
         cond.focus();
         return false;
     }*/
+    
     if(!checkEmail() || !checkName()){
         return false;
     };
@@ -334,6 +342,7 @@ document.getElementById('nav').addEventListener('mouseleave', function(){
 });
 
 /*--------------------------------------------------------------anims textes-------------------------------------------------------------*/
+
 var motEcrit = false;
 var logosRemontes = false;
 document.getElementsByClassName('bvp')[0].style.opacity = 0;
@@ -404,11 +413,10 @@ function checkMessage(){
 };
 
 /* ------------------------------- raffraichissement aprés un rotate du telephone -----------------------------*/
-
-window.addEventListener('resize', function(){
-
+function refreshMobileOrientation(){
     location.reload();
-});
+}
+window.addEventListener("orientationchange", refreshMobileOrientation);
 
 /*-------------------------------Mise En Rond----------------------------------------------------------------------*/
 
@@ -477,7 +485,28 @@ function demarrage(){
         tourner();
     }
 }
-demarrage();
+
+function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+    );
+}
+
+
+const competences = document.querySelector('.competences');
+
+document.addEventListener('scroll', function () {
+    if(isInViewport(competences) && !enPosition) {
+        demarrage();
+    }       
+
+});
+
 
 function afficheTechno(e){
     if(iconeCentre){
@@ -494,3 +523,4 @@ function afficheTechno(e){
     derniereIconeP = p;
     iconeCentre = true;
 }
+
