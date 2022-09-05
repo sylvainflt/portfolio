@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'nature';
-    src: url(./Nature.ttf);
+    src: url(../asset/font/Nature.ttf);
 }
 @font-face {
     font-family: 'poppins';
-    src: url(./Poppins-Regular.otf);
+    src: url(../asset/font/Poppins-Regular.otf);
 }
 * {
     margin: 0;

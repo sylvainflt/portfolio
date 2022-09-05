@@ -1,10 +1,10 @@
 @font-face {
     font-family: "fairProsper";
-    src: url("./FairProsper.ttf");
+    src: url("../asset/font/FairProsper.ttf");
 }
 @font-face {
     font-family: "painter";
-    src: url("./Painter_PERSONAL_USE_ONLY.ttf");
+    src: url("../asset/font/Painter_PERSONAL_USE_ONLY.ttf");
 }
 * {
     margin: 0;
@@ -270,7 +270,7 @@ h3{
 #RCMortagne:hover,
 #naturePV
 {
-    cursor: pointer;
+    cursor: grab;
 }
 
 main {

@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Sylvain Foucault - Développeur web</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="images/SF.png">
+    <link href="./style/style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="asset/images/SF.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -57,7 +57,7 @@
                 </div>
                 <h1 id="webdev">DEVELOPPEUR WEB</h1>
 
-                <img id="photoEntree" src="./images/photo.png" alt="ma photo">
+                <img id="photoEntree" src="./asset/images/photo.png" alt="ma photo">
 
                 <a id="lienBienvenu" class="lien" onclick="scrollToBienvenu()">
                     <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -99,7 +99,7 @@
                     avec un goût pour le <span class="bleuFonceColor">web</span>,</p>
                 <p class="rvt3">    
                     je suis toujours en quête d'inspiration, d'<span class="bleuFonceColor">originalité</span>.</p>
-                <img src="./images/portraitDessin2.png" class="portraitDessin" alt="portrait dessin">       
+                <img src="./asset/images/portraitDessin2.png" class="portraitDessin" alt="portrait dessin">       
             </div>                                    
 
             <a id="lienRealisations" class="lien" onclick="scrollToRealisations()">
@@ -150,12 +150,18 @@
                     -->
                     <div class="container">
                         <div class="carousel">                                
-                            <img src="./images/airGoRun.png" alt="airgo run" id="airGoRunScreen" ondragstart="drag1(event)" ontouchstart="touch1(event)">                                                                                    
-                            <img src="./images/contactFormAMP.png" alt="formulaire de contact" id="contactForm" ondragstart="drag2(event)" ontouchstart="touch2(event)">
-                            <img src="./images/blogAPI.png" alt="une api pour un blog" id="blogAPI" ondragstart="drag3(event)" ontouchstart="touch3(event)">
-                            <img src="./images/MielConnect/MCheader.png" alt="miel connect" id="mielConnect" ondragstart="drag4(event)" ontouchstart="touch4(event)">
-                            <img src="./images/RCMortagne/RCMortagne.jpg" alt="RC Mortagne" id="RCMortagne" ondragstart="drag5(event)" ontouchstart="touch5(event)">
-                            <img src="./images/nature.png" alt="nature point de vue" id="naturePV" onclick="document.location = 'nature.php';" ondragstart="drag6(event)" ontouchstart="touch6(event)">                            
+                            <img src="./asset/images/airGoRun.png" alt="airgo run" id="airGoRunScreen" 
+                                onmousedown="this.style.cursor = 'grabbing';" onmouseleave="this.style.cursor = 'grab';" ondragstart="drag1(event)" ontouchstart="touch1(event)">                                                                                    
+                            <img src="./asset/images/contactFormAMP.png" alt="formulaire de contact" id="contactForm" 
+                                onmousedown="this.style.cursor = 'grabbing';" onmouseleave="this.style.cursor = 'grab';" ondragstart="drag2(event)" ontouchstart="touch2(event)">
+                            <img src="./asset/images/blogAPI.png" alt="une api pour un blog" id="blogAPI" 
+                                onmousedown="this.style.cursor = 'grabbing';" onmouseleave="this.style.cursor = 'grab';" ondragstart="drag3(event)" ontouchstart="touch3(event)">
+                            <img src="./asset/images/MielConnect/MCheader.png" alt="miel connect" id="mielConnect" 
+                                onmousedown="this.style.cursor = 'grabbing';" onmouseleave="this.style.cursor = 'grab';" ondragstart="drag4(event)" ontouchstart="touch4(event)">
+                            <img src="./asset/images/RCMortagne/RCMortagne.jpg" alt="RC Mortagne" id="RCMortagne" 
+                                onmousedown="this.style.cursor = 'grabbing';" onmouseleave="this.style.cursor = 'grab';" ondragstart="drag5(event)" ontouchstart="touch5(event)">
+                            <img src="./asset/images/nature.png" alt="nature point de vue" id="naturePV" onclick="document.location = 'nature.php';" 
+                                onmousedown="this.style.cursor = 'grabbing';" onmouseleave="this.style.cursor = 'grab';" ondragstart="drag6(event)" ontouchstart="touch6(event)">                            
                         </div>
                     </div> 
                     
@@ -169,21 +175,21 @@
                 </div>                                   
                 
                 <div id="overlay">
-                    <img src="./images/airGoRun.png" id="airGoRunBigScreen" alt="airGoRun big screen">
+                    <img src="./asset/images/airGoRun.png" id="airGoRunBigScreen" alt="airGoRun big screen">
                 </div>                                
                 <div id="overlay2">
-                    <img src="./images/contactFormAMP.png" id="contactFormBigScreen" alt="formulaire de contact">
+                    <img src="./asset/images/contactFormAMP.png" id="contactFormBigScreen" alt="formulaire de contact">
                 </div>
                 <div id="overlay3">
-                    <img src="./images/blogAPI.png" id="blogAPIBigScreen" alt="blog API">
+                    <img src="./asset/images/blogAPI.png" id="blogAPIBigScreen" alt="blog API">
                 </div>
                 <div id="overlay4">
-                    <img src="./images/MielConnect/MCheader.png" id="mielConnectBigScreen" alt="miel connect grand">
-                    <img src="./images/MielConnect/MCpres.png" id="mielConnect2BigScreen" alt="miel connect grand">
+                    <img src="./asset/images/MielConnect/MCheader.png" id="mielConnectBigScreen" alt="miel connect grand">
+                    <img src="./asset/images/MielConnect/MCpres.png" id="mielConnect2BigScreen" alt="miel connect grand">
                 </div>
                 <div id="overlay5">
-                    <img src="./images/RCMortagne/RCMortagne.jpg" id="RCMortagneBigScreen" alt="RC Mortagne grand">
-                    <img src="./images/RCMortagne/lactu.png" id="RCMActuBigScreen" alt="RC Mortagne grand">
+                    <img src="./asset/images/RCMortagne/RCMortagne.jpg" id="RCMortagneBigScreen" alt="RC Mortagne grand">
+                    <img src="./asset/images/RCMortagne/lactu.png" id="RCMActuBigScreen" alt="RC Mortagne grand">
                 </div>
                 
             </div>
@@ -221,7 +227,7 @@
                 <div class="skill">
                     <a data="https://fr.wikipedia.org/wiki/HTML" target="_blank">
                         <div class="contourLogo" >
-                            <img src="./images/logos/javascripthtmlcss.png" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/javascripthtmlcss.png" onclick="afficheTechno(event)">
                         </div>
                     </a>  
                     <p>HTML, CSS ainsi que Javascript sont la base de tous site internet. J'ai utilisé ces langages dans chaque projet.</p>                  
@@ -229,7 +235,7 @@
                 <div class="skill">
                     <a data="https://fr.wikipedia.org/wiki/PHP" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/PHP-logo.svg" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/PHP-logo.svg" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>J'ai utilisé PHP dans des exercices et TPs, PHP étant le langage côté serveur le plus utilisé.</p>                                                      
@@ -237,7 +243,7 @@
                 <div class="skill">
                     <a data="https://fr.wikipedia.org/wiki/WampServer" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/WampServer-logo.png" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/WampServer-logo.png" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>WampServer est un outils trés pratique incluant un serveur apache ainsi que mySql pour les bases de données.</p>                                  
@@ -245,7 +251,7 @@
                 <div class="skill">                 
                     <a data="https://fr.wikipedia.org/wiki/Symfony" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/symfony_logo_vertical.png.webp" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/symfony_logo_vertical.png.webp" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>Symfony est un framework basé sur PHP. Je l'ai utilisé notamment pour mon projet RCMortagne.</p>                                  
@@ -253,7 +259,7 @@
                 <div class="skill">
                     <a data="https://fr.wikipedia.org/wiki/Node.js" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/Node.js_logo.svg" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/Node.js_logo.svg" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>NodeJs est un langage côté serveur basé sur Javascript. Je l'ai utilisé pour mon projet Blog.</p>                                  
@@ -261,7 +267,7 @@
                 <div class="skill">
                     <a data="https://fr.wikipedia.org/wiki/React" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/React-icon.svg" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/React-icon.svg" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>J'ai utilisé le framework React dans mon projet react-portfolio.</p>                                  
@@ -269,7 +275,7 @@
                 <div class="skill">
                     <a data="https://fr.wikipedia.org/wiki/Next.js" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/Nextjs-logo.svg" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/Nextjs-logo.svg" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>J'ai utilisé le framework NextJs dans mon projet Blog.</p>                                  
@@ -277,7 +283,7 @@
                 <div class="skill">
                     <a data="https://fr.wikipedia.org/wiki/PostgreSQL" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/postgreSql.png" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/postgreSql.png" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>J'ai utilisé le système de gestion de base de données PostgreSql dans mon projet Blog.</p>                                  
@@ -285,7 +291,7 @@
                 <div class="skill">
                     <a data="https://www.prisma.io/" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/prisma-2.svg" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/prisma-2.svg" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>J'ai utilisé l'ORM Prisma dans mon projet Blog.</p>                                  
@@ -293,7 +299,7 @@
                 <div class="skill">
                     <a data="https://fr.wikipedia.org/wiki/Bootstrap_(framework)" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/Bootstrap_logo.png" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/Bootstrap_logo.png" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>J'ai utilisé Bootstrap dans différents projets, pour le positionnement.</p>                  
@@ -301,7 +307,7 @@
                 <div class="skill">
                     <a data="https://fr.wikipedia.org/wiki/Wordpress" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/wordpressLogo.png" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/wordpressLogo.png" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>J'ai développé avec Wordpress le projet Miel Connect.</p>                  
@@ -309,7 +315,7 @@
                 <div class="skill">
                     <a data="https://fr.wikipedia.org/wiki/Figma" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/figma-logo-carre_500x.webp" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/figma-logo-carre_500x.webp" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>J'ai utilisé Figma à plusieurs reprises pour faire les maquettes. (airGoRun, B/D)</p>                                  
@@ -317,7 +323,7 @@
                 <div class="skill">                             
                     <a data="https://fr.wikipedia.org/wiki/GitHub" target="_blank">
                         <div class="contourLogo">
-                            <img src="./images/logos/GitHub-Logo.png" onclick="afficheTechno(event)">
+                            <img src="./asset/images/logos/GitHub-Logo.png" onclick="afficheTechno(event)">
                         </div>
                     </a>
                     <p>Une bonne partie des développements sur lesquels j'ai travaillé sont sur Github.</p>                                                  

@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sylvain Foucault - Développeur web</title>
-    <link rel="icon" type="image/x-icon" href="images/SF.png">
-    <link rel="stylesheet" href="./nature.css">
-    <script src="./nature.js"></script>
+    <link rel="icon" type="image/x-icon" href="./asset/images/SF.png">
+    <link rel="stylesheet" href="./style/nature.css">
+    <script src="./js/nature.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js" integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -25,16 +25,16 @@
             <div class="images">
                 
                 <div class="image-wrapper" id="first">
-                    <img src="./images/nature/full.png" />
+                    <img src="./asset/images/nature/full.png" />
                 </div>
                 <div class="image-wrapper" id="second">
-                    <img src="./images/nature/03.png" />
+                    <img src="./asset/images/nature/03.png" />
                 </div>
                 <div class="image-wrapper" id="third">
-                    <img src="./images/nature/02.png" />
+                    <img src="./asset/images/nature/02.png" />
                 </div>
                 <div class="image-wrapper" id="fourth">
-                    <img src="./images/nature/01.png" />
+                    <img src="./asset/images/nature/01.png" />
                 </div>
                 <div class="blur"></div>
             </div>
@@ -52,19 +52,19 @@
                 <div class="content-wrapper">
                     <div class="content-images">
                         <div class="content-image-wrapper one">
-                            <img src="./images/nature/shane-rounce-DNkoNXQti3c-unsplash.jpg">
+                            <img src="./asset/images/nature/shane-rounce-DNkoNXQti3c-unsplash.jpg">
                             <h4>W</h4>
                         </div>
                         <div class="content-image-wrapper two">
-                            <img src="./images/nature/ivana-cajina-9GzNq7zuMf4-unsplash.jpg">
+                            <img src="./asset/images/nature/ivana-cajina-9GzNq7zuMf4-unsplash.jpg">
                             <h4>E</h4>
                         </div>
                         <div class="content-image-wrapper three">
-                            <img src="./images/nature/christopher-campbell-f_NGd35rOsQ-unsplash.jpg">
+                            <img src="./asset/images/nature/christopher-campbell-f_NGd35rOsQ-unsplash.jpg">
                             <h4>S</h4>
                         </div>
                         <div class="content-image-wrapper four">
-                            <img src="./images/nature/james-wheeler-RRZM3cwS1DU-unsplash.jpg">
+                            <img src="./asset/images/nature/james-wheeler-RRZM3cwS1DU-unsplash.jpg">
                             <h4>T</h4>
                         </div>
                     </div>
