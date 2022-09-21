@@ -25,12 +25,22 @@
             <li><a href="downloadCV.php" target="_blank">CV</a></li>
         </ul>
     </nav>
+    <div id="menuBurger">
+        <span class="logo bleuFonceColor" onclick="menuBurger()">SF</span>
+        <ul>
+            <li><a href="#entree" id="testEntree" onclick="menuBurger()">ENTREE</a></li>
+            <li><a href="#mot" onclick="menuBurger()">MOT</a></li>
+            <li><a href="#realisations" onclick="menuBurger()">REALISATIONS</a></li>
+            <li><a href="#competences" onclick="menuBurger()">COMPETENCES</a></li>
+            <li><a href="#contact" onclick="menuBurger()">CONTACT</a></li>
+            <li><a href="downloadCV.php" target="_blank" onclick="menuBurger()">CV</a></li>
+        </ul>
+    </div>
 
     <main>
 
         <section>
             <div id="entree">
-                <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
                 <canvas id="canvas"></canvas>
                 
                 <div class="nom">
@@ -76,8 +86,6 @@
 
         <section id="mot">            
 
-            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
-
             <a id="lienTop" class="lien" onclick="scrollToTop()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g id="Iconly/Two-tone/Arrow---Up-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -116,8 +124,6 @@
 
         <section class="titleScreens" id="realisations">            
 
-            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>
-                
             <a id="lienBackBienvenu" class="lien" onclick="scrollBackToBienvenu()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                     <g id="Iconly/Two-tone/Arrow---Up-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -206,8 +212,6 @@
         </section>
 
         <section class="skills" id="competences">
-
-            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>                
 
             <a id="lienBackToRealisations" class="lien" onclick="scrollBackToRealisations()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -344,8 +348,6 @@
         </section>
 
         <section class="contact" id="contact">
-
-            <div class="CV"><a href="downloadCV.php" target="_blank">CV</a></div>                
 
             <a id="lienBackToSkills" class="lien" onclick="scrollBackToSkills()">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">

@@ -524,3 +524,16 @@ function afficheTechno(e){
     iconeCentre = true;
 }
 
+/*=============================================================== MENU BURGER =============================================================*/
+
+let menuDeroule = false;
+
+function menuBurger(){
+    if(!menuDeroule){
+        document.getElementById("menuBurger").style.width = "50%";
+        
+    }else{
+        document.getElementById("menuBurger").style.width = "0";
+    }
+    menuDeroule = !menuDeroule;
+}

@@ -36,6 +36,7 @@ body {
     position: absolute;
     left: 3vw;
     top: 15px;
+    font-size: 20px;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -89,7 +90,25 @@ a{
 a:hover {
     color: #090979!important;
 }
-
+#menuBurger {
+    width: 0;  
+    display: none;
+    text-align: left; 
+}
+#menuBurger ul {
+    overflow: hidden;
+    list-style-type: none;
+    margin-top: 50px;
+}
+#menuBurger ul li {
+    display: block;
+    font-size: 20px;
+    margin-right: 20px;
+    transition: all .25s;
+}
+#menuBurger ul li a {
+    color: #1069dd;
+}
 #entree{
     width: 100vw;
     height: 100vh; 
@@ -732,6 +751,15 @@ input[value="6"]:checked ~ #descProj6 { display: block; }
 @media screen and (max-width: 768px) { /*=========================================================================================================================*/
     #nav{
         display: none;
+    }
+    #menuBurger {      
+        display: block;
+        background-color: #FFFFFF;          
+        position: fixed;
+        z-index: 12;   
+    }
+    #menuBurger span {
+        text-shadow: 1px -1px 2px #efdfd0;                     
     }
     body {
         width: 100vw;
