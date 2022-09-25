@@ -4,10 +4,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sylvain Foucault - Développeur web</title>
+    <title>Sylvain Foucault - Développeur Web et Web Mobile à Amiens</title>
     <link href="./style/style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="asset/images/SF.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ma page de présentation et portfolio. Elle reprend mes expériences en développement web, mes compétences, accès à mon CV et un formulaire de contact." />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -67,7 +68,7 @@
                 </div>
                 <h1 id="webdev">DEVELOPPEUR WEB</h1>
 
-                <img id="photoEntree" src="./asset/images/photo.png" alt="ma photo">
+                <img id="photoEntree" src="./asset/images/portraitEclairci.png" alt="ma photo">
 
                 <a id="lienBienvenu" class="lien" onclick="scrollToBienvenu()">
                     <svg width="24px" height="24px" viewBox="0 0 24 24">
