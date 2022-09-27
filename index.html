@@ -1,5 +1,4 @@
-<?php session_start();
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -167,7 +166,7 @@
                                 onmousedown="this.style.cursor = 'grabbing';" onmouseleave="this.style.cursor = 'grab';" ondragstart="drag4(event)" ontouchstart="touch4(event)">
                             <img src="./asset/images/RCMortagne/RCMortagne.jpg" alt="RC Mortagne" id="RCMortagne" 
                                 onmousedown="this.style.cursor = 'grabbing';" onmouseleave="this.style.cursor = 'grab';" ondragstart="drag5(event)" ontouchstart="touch5(event)">
-                            <img src="./asset/images/nature.png" alt="nature point de vue" id="naturePV" onclick="document.location = 'nature.php';" 
+                            <img src="./asset/images/nature.png" alt="nature point de vue" id="naturePV" onclick="document.location = 'nature.html';" 
                                 onmousedown="this.style.cursor = 'grabbing';" onmouseleave="this.style.cursor = 'grab';" ondragstart="drag6(event)" ontouchstart="touch6(event)">                            
                         </div>
                     </div> 
@@ -363,7 +362,39 @@
 
             <h2 class="bleuColor" id="titreContact">Contact</h2>
 
-            <?php include 'formContact.php'; ?>
+            <form action="sendEmail.php" method="post" id="formContact">
+                <div id="nuages">
+                                                        
+                    <div class="form-floating" id="nuageNom">
+                        <input type="text" class="form-control" id="nameContact" name="nameContact" placeholder="Nom" 
+                                pattern="^[A-Za-z '-]+$" maxlength="20"
+                                value="">
+                            <label for="nameContact">Nom :</label>
+                    </div>								                                                            
+                    <div class="form-floating" id="nuageObjet">
+                        <input type="text" class="form-control" id="objectContact" name="objectContact" placeholder="Objet"
+                            value="">
+                        <label for="objectContact">Objet : </label>
+                    </div>                    
+                    <div class="form-floating" id="nuageEmail">
+                        <input type="email" class="form-control" id="emailContact" name="emailContact" placeholder="Email" onfocus="checkMessage()"
+                            required pattern="^[A-Za-z]+@{1}[A-Za-z]+\.{1}[A-Za-z]{2,}$"
+                            value="">
+                        <label for="emailContact">E-mail : </label>
+                    </div>                            
+                            
+                    <div class="form-floating" id="nuageMessage">
+                        <!-- zone de texte étirable -->								
+                        <textarea class="form-control" id="message" name="message" placeholder="Ecrivez votre message" onfocus="checkMessage()" style="height: 200px" required></textarea>									
+                        <label for="message">Message : </label>
+                    </div>
+                    
+                    <input type="hidden" id="postId" name="postId" value="">
+                    <div id="nuageBouton" onclick="contactSubmit()">                                            
+                        <a>Envoyer</a>               
+                    </div>    
+                </div>
+            </form>
             
         </section>
 
